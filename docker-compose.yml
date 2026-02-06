@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  mcp-resume:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+    command: ["node", "packages/mcp-resume/dist/index.js"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  mcp-portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+    command: ["node", "packages/mcp-portfolio/dist/index.js"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3002/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  mcp-github-insights:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "3003:3003"
+    environment:
+      - PORT=3003
+      - GITHUB_TOKEN=${GITHUB_TOKEN:-}
+    command: ["node", "packages/mcp-github-insights/dist/index.js"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3003/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  demo:
+    build:
+      context: .
+      dockerfile: Dockerfile.demo
+    ports:
+      - "3000:3000"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - MCP_RESUME_URL=http://mcp-resume:3001/mcp
+      - MCP_PORTFOLIO_URL=http://mcp-portfolio:3002/mcp
+      - MCP_GITHUB_URL=http://mcp-github-insights:3003/mcp
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+    depends_on:
+      mcp-resume:
+        condition: service_healthy
+      mcp-portfolio:
+        condition: service_healthy
+      mcp-github-insights:
+        condition: service_healthy

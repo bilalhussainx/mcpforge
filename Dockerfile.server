@@ -1,0 +1,32 @@
+FROM node:20-slim
+
+# Install Chromium dependencies for Puppeteer (mcp-resume needs it)
+RUN apt-get update && apt-get install -y \
+    chromium \
+    fonts-liberation \
+    libnss3 \
+    libxss1 \
+    libasound2 \
+    libatk-bridge2.0-0 \
+    libgtk-3-0 \
+    --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+
+WORKDIR /app
+
+# Copy workspace root
+COPY package.json package-lock.json* ./
+COPY tsconfig.base.json ./
+
+# Copy all packages (needed for workspace resolution)
+COPY packages/ ./packages/
+
+# Install dependencies
+RUN npm install --ignore-scripts
+RUN npm run build --workspace=packages/mcp-portfolio --workspace=packages/mcp-resume --workspace=packages/mcp-github-insights
+
+# Default command (overridden per service in docker-compose)
+CMD ["echo", "Use docker-compose to start individual servers"]

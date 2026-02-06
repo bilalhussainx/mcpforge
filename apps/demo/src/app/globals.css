@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0F172A;
+  --color-primary-light: #1E293B;
+  --color-primary-lighter: #334155;
+  --color-accent: #22D3EE;
+  --color-accent-dim: #0891B2;
+  --color-success: #34D399;
+  --color-success-dim: #059669;
+  --color-warning: #FBBF24;
+  --color-warning-dim: #D97706;
+  --color-error: #FB7185;
+  --color-error-dim: #E11D48;
+  --color-surface: #1E293B;
+  --color-surface-dark: #0F172A;
+  --color-surface-light: #334155;
+  --color-border: #475569;
+  --color-text: #F8FAFC;
+  --color-text-dim: #94A3B8;
+  --color-text-muted: #64748B;
+
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-sans: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border);
+}
+
+/* Protocol Inspector styling */
+.inspector-row {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+  transition: background-color 0.15s ease;
+}
+
+.inspector-row:hover {
+  background-color: rgba(34, 211, 238, 0.05);
+}
+
+.inspector-row.expanded {
+  background-color: rgba(34, 211, 238, 0.08);
+}
+
+/* JSON viewer styling */
+.json-key {
+  color: #7DD3FC;
+}
+
+.json-string {
+  color: #34D399;
+}
+
+.json-number {
+  color: #FBBF24;
+}
+
+.json-boolean {
+  color: #FB7185;
+}
+
+.json-null {
+  color: #94A3B8;
+}
+
+/* Code blocks */
+.code-block {
+  font-family: var(--font-mono);
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--color-surface-light);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+
+/* Tool call card styling */
+.tool-card {
+  border-left: 3px solid;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.4));
+  backdrop-filter: blur(8px);
+}
+
+.tool-card-resume {
+  border-left-color: var(--color-accent);
+}
+
+.tool-card-portfolio {
+  border-left-color: var(--color-success);
+}
+
+.tool-card-github {
+  border-left-color: var(--color-warning);
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
+}
+
+.glow-success {
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.15);
+}
+
+.glow-warning {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.15);
+}
+
+/* Pulse dot animation */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-success));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ATS Score circular progress */
+.ats-circle {
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+/* Split panel resize handle */
+.resize-handle {
+  width: 4px;
+  cursor: col-resize;
+  background: var(--color-surface-light);
+  transition: background-color 0.15s ease;
+}
+
+.resize-handle:hover {
+  background: var(--color-accent);
+}

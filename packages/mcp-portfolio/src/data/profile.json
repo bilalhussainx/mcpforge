@@ -1,0 +1,124 @@
+{
+  "name": "Bilal Hussain",
+  "title": "Senior Full-Stack Developer | AI-Native Workflow",
+  "headline": "Senior full-stack developer specializing in Django and React with AI-native development workflow. Daily Claude Code power user. Harvard CS. Multi-agent AI systems + RAG pipelines.",
+  "email": "bilalhussain.v1@gmail.com",
+  "linkedin": "https://linkedin.com/in/bilalhussain",
+  "github": "https://github.com/bilalhussainx",
+  "location": "Toronto, ON (EST)",
+  "timezone": "EST — Available 9 AM – 6 PM EST",
+  "yearsExperience": 5,
+  "education": [
+    {
+      "institution": "Harvard College",
+      "degree": "Bachelor of Arts",
+      "field": "Computer Science",
+      "location": "Cambridge, MA",
+      "graduated": "May 2022"
+    }
+  ],
+  "skills": {
+    "expert": [
+      "Python", "Django", "Django REST Framework", "React", "TypeScript", "JavaScript",
+      "PostgreSQL", "MongoDB", "RESTful API Design", "Claude Code", "Git"
+    ],
+    "proficient": [
+      "Node.js", "Express", "Next.js", "Redux", "HTML5", "CSS3",
+      "Docker", "CI/CD", "AWS", "Playwright", "Jest",
+      "Prompt Engineering", "RAG Pipelines", "Multi-Agent AI Systems",
+      "LangGraph", "WebSocket", "WebRTC"
+    ],
+    "familiar": [
+      "Ollama", "Llama 3.1", "Mistral 7B", "Fine-tuning LLMs",
+      "Tailwind CSS", "Redis", "GraphQL", "Solidity", "Avalanche",
+      "Web3Auth", "JWT", "MCP Protocol", "Puppeteer", "Octokit"
+    ]
+  },
+  "specializations": [
+    "AI-Native Full-Stack Development",
+    "Multi-Agent AI Systems & RAG Pipelines",
+    "Django + React Applications",
+    "Real-Time Web Applications",
+    "Educational Technology"
+  ],
+  "projects": [
+    {
+      "name": "EssayMentor AI",
+      "slug": "essaymentor-ai",
+      "description": "6-agent essay generation system for college admissions using LangGraph and a RAG pipeline for context-aware AI assistance. A/B tested Llama 3.1 vs fine-tuned Mistral 7B to evaluate reliability, latency, and quality metrics.",
+      "techStack": ["LangGraph", "RAG", "Ollama", "Llama 3.1", "Mistral 7B", "React", "Python", "Node.js"],
+      "outcomes": "Built production-grade multi-agent pipeline with 6 specialized agents (research, outline, drafting, editing, feedback, revision). Implemented RAG pipeline for context-aware assistance. Base model outperformed fine-tuned alternatives in A/B testing.",
+      "role": "Sole Developer",
+      "url": "https://github.com/bilalhussainx/essaymentor-ai",
+      "relevantFor": ["AI", "agents", "LLM", "RAG", "multi-agent", "education", "Python"]
+    },
+    {
+      "name": "CoreZenith",
+      "slug": "educator-app",
+      "description": "Real-time educational platform supporting 50+ concurrent users with WebRTC video conferencing and WebSocket-based terminal synchronization for virtual classrooms.",
+      "techStack": ["React", "Node.js", "WebSocket", "WebRTC", "MongoDB"],
+      "outcomes": "Developed real-time collaborative coding environments. Built complex terminal synchronization for virtual classrooms. Supports 50+ concurrent users.",
+      "role": "Sole Developer",
+      "url": "https://github.com/bilalhussainx/educator-app",
+      "relevantFor": ["full-stack", "real-time", "education", "WebSocket", "WebRTC"]
+    },
+    {
+      "name": "MCPForge",
+      "slug": "mcpforge",
+      "description": "Multi-server MCP toolkit: ATS resume optimizer, portfolio query server, and GitHub intelligence server. 3 npm-published MCP servers + Next.js demo app with live JSON-RPC protocol inspector.",
+      "techStack": ["TypeScript", "MCP SDK", "Claude API", "Next.js", "Puppeteer", "Octokit", "Express"],
+      "outcomes": "3 published MCP servers on npm. Implemented Streamable HTTP transport, multi-server orchestration, and protocol-level visibility with live inspector.",
+      "role": "Sole Developer",
+      "url": "https://github.com/bilalhussainx/mcpforge",
+      "relevantFor": ["AI", "MCP", "agents", "full-stack", "TypeScript"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Penomo Protocol",
+      "title": "Senior Full-Stack Developer",
+      "location": "Remote",
+      "startDate": "Aug 2025",
+      "endDate": "Present",
+      "bullets": [
+        "Work daily in existing MERN stack codebase across three interconnected applications (company portal, admin interface, investor portal)",
+        "Use Claude Code to accelerate delivery of iterative tasks: auth workflows, API integrations, bug fixes",
+        "Architected authorization workflow improvements, eliminating manual session storage clearing and resolving critical authentication bugs",
+        "Established automated testing infrastructure using Playwright, alongside MongoDB integration testing",
+        "Operate independently with minimal supervision, communicating progress clearly and flagging blockers early"
+      ]
+    },
+    {
+      "company": "Healthynox",
+      "title": "Lead Software Engineer",
+      "location": "Remote",
+      "startDate": "Aug 2019",
+      "endDate": "Dec 2021",
+      "bullets": [
+        "Built patient data platform using Python (Django REST Framework) backend + React/TypeScript frontend",
+        "Designed PostgreSQL database schema for HIPAA-compliant sensitive patient data",
+        "Engineered RESTful APIs enabling real-time data synchronization with third-party EHR systems",
+        "Containerized with Docker, automated CI/CD to AWS — reduced deployment time by 40%",
+        "Mentored 3 junior engineers, established Git workflow and testing best practices"
+      ]
+    },
+    {
+      "company": "Milton Academy",
+      "title": "Computer Science Instructor",
+      "location": "Milton, MA",
+      "startDate": "Aug 2022",
+      "endDate": "May 2024",
+      "bullets": [
+        "Designed curriculum covering Python, JavaScript, algorithms, and data structures",
+        "Strong communication skills developed through teaching complex technical concepts"
+      ]
+    }
+  ],
+  "valueProps": [
+    "AI-native development workflow: Daily Claude Code power user who builds at ~3x speed and knows when to trust AI output vs when to correct it",
+    "Harvard CS + 5+ years production full-stack experience (Django + React)",
+    "Built multi-agent AI systems with RAG pipelines (EssayMentor 6-agent pipeline with LangGraph)",
+    "Full-stack depth: Python/Django backend + React/TypeScript frontend + PostgreSQL/MongoDB data layer",
+    "Proven ability to work independently in existing codebases with minimal hand-holding"
+  ]
+}

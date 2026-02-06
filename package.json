@@ -1,0 +1,24 @@
+{
+  "name": "mcpforge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi-Server MCP Toolkit: ATS Resume Optimizer, Portfolio Server, GitHub Intelligence",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:portfolio": "npm run dev --workspace=packages/mcp-portfolio",
+    "dev:resume": "npm run dev --workspace=packages/mcp-resume",
+    "dev:github": "npm run dev --workspace=packages/mcp-github-insights",
+    "dev:demo": "npm run dev --workspace=apps/demo",
+    "dev:servers": "concurrently \"npm run dev:portfolio\" \"npm run dev:resume\" \"npm run dev:github\"",
+    "dev": "concurrently \"npm run dev:servers\" \"npm run dev:demo\"",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.7.0"
+  }
+}

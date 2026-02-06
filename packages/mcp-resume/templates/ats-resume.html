@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{NAME}} — Resume</title>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ── Base typography — ATS-safe system fonts ── */
+    body {
+      font-family: Arial, Calibri, 'Segoe UI', Helvetica, sans-serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+
+    /* ── Layout: single column, no tables ── */
+    .resume {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    /* ── Header / Contact ── */
+    .header {
+      text-align: center;
+      margin-bottom: 12pt;
+      border-bottom: 1.5pt solid #333333;
+      padding-bottom: 8pt;
+    }
+
+    h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      letter-spacing: 0.5pt;
+      color: #111111;
+      margin-bottom: 2pt;
+    }
+
+    .header .title {
+      font-size: 12pt;
+      font-weight: 400;
+      color: #444444;
+      margin-bottom: 4pt;
+    }
+
+    .header .contact {
+      font-size: 10pt;
+      color: #555555;
+    }
+
+    /* ── Section headings ── */
+    h2 {
+      font-size: 12pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8pt;
+      color: #222222;
+      border-bottom: 1pt solid #cccccc;
+      padding-bottom: 3pt;
+      margin-top: 14pt;
+      margin-bottom: 8pt;
+    }
+
+    /* ── Experience & Education entries ── */
+    .experience-entry,
+    .education-entry {
+      margin-bottom: 10pt;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .entry-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .entry-right {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .job-title,
+    .institution {
+      font-weight: 700;
+      font-size: 11pt;
+    }
+
+    .company,
+    .degree {
+      font-style: italic;
+      font-size: 10.5pt;
+      color: #333333;
+    }
+
+    .date-range {
+      font-size: 10pt;
+      color: #555555;
+      white-space: nowrap;
+    }
+
+    /* ── Bullet points ── */
+    ul {
+      margin-top: 4pt;
+      margin-left: 18pt;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 2pt;
+      font-size: 10.5pt;
+      line-height: 1.4;
+    }
+
+    /* ── Skills ── */
+    .skills-list {
+      font-size: 10.5pt;
+      line-height: 1.6;
+    }
+
+    /* ── Summary ── */
+    .summary-text {
+      font-size: 10.5pt;
+      line-height: 1.5;
+    }
+
+    /* ── Paragraphs ── */
+    p {
+      margin-bottom: 4pt;
+    }
+
+    /* ════════════════════════════════════════════════════
+       VARIANT: classic (default — traditional look)
+       ════════════════════════════════════════════════════ */
+    .variant-classic .header {
+      border-bottom: 1.5pt solid #333333;
+    }
+
+    .variant-classic h2 {
+      border-bottom: 1pt solid #cccccc;
+    }
+
+    /* ════════════════════════════════════════════════════
+       VARIANT: modern (more breathing room)
+       ════════════════════════════════════════════════════ */
+    .variant-modern body,
+    .variant-modern {
+      line-height: 1.55;
+    }
+
+    .variant-modern .header {
+      border-bottom: 2pt solid #2a5db0;
+      padding-bottom: 10pt;
+      margin-bottom: 16pt;
+    }
+
+    .variant-modern h1 {
+      color: #2a5db0;
+    }
+
+    .variant-modern h2 {
+      color: #2a5db0;
+      border-bottom: 1pt solid #b0c4de;
+      margin-top: 18pt;
+      margin-bottom: 10pt;
+      padding-bottom: 4pt;
+    }
+
+    .variant-modern .experience-entry,
+    .variant-modern .education-entry {
+      margin-bottom: 14pt;
+    }
+
+    .variant-modern li {
+      margin-bottom: 3pt;
+    }
+
+    /* ════════════════════════════════════════════════════
+       VARIANT: minimal (very clean, maximum whitespace)
+       ════════════════════════════════════════════════════ */
+    .variant-minimal .header {
+      border-bottom: none;
+      margin-bottom: 10pt;
+      padding-bottom: 6pt;
+    }
+
+    .variant-minimal h1 {
+      font-weight: 600;
+      font-size: 18pt;
+    }
+
+    .variant-minimal h2 {
+      font-weight: 600;
+      font-size: 11pt;
+      text-transform: uppercase;
+      letter-spacing: 1.5pt;
+      border-bottom: 0.5pt solid #dddddd;
+      color: #444444;
+      margin-top: 12pt;
+      margin-bottom: 6pt;
+    }
+
+    .variant-minimal .job-title,
+    .variant-minimal .institution {
+      font-weight: 600;
+    }
+
+    .variant-minimal .company,
+    .variant-minimal .degree {
+      font-style: normal;
+      color: #555555;
+    }
+
+    .variant-minimal li {
+      font-size: 10pt;
+    }
+
+    .variant-minimal .skills-list {
+      font-size: 10pt;
+    }
+
+    /* ── Print styles ── */
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume variant-{{VARIANT}}">
+
+    <!-- ── Header ── -->
+    <div class="header">
+      <h1>{{NAME}}</h1>
+      <div class="title">{{TITLE}}</div>
+      <div class="contact">{{CONTACT}}</div>
+    </div>
+
+    <!-- ── Professional Summary ── -->
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary-text">{{SUMMARY}}</p>
+    </section>
+
+    <!-- ── Professional Experience ── -->
+    <section>
+      <h2>Professional Experience</h2>
+      {{EXPERIENCE}}
+    </section>
+
+    <!-- ── Technical Skills ── -->
+    <section>
+      <h2>Technical Skills</h2>
+      {{SKILLS}}
+    </section>
+
+    <!-- ── Education ── -->
+    <section>
+      <h2>Education</h2>
+      {{EDUCATION}}
+    </section>
+
+    <!-- ── Certifications (conditional) ── -->
+    {{CERTIFICATIONS}}
+
+  </div>
+</body>
+</html>

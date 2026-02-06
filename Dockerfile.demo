@@ -1,0 +1,21 @@
+FROM node:20-slim
+
+WORKDIR /app
+
+# Copy workspace root
+COPY package.json package-lock.json* ./
+COPY tsconfig.base.json ./
+
+# Copy demo app and packages (needed for workspace resolution)
+COPY apps/ ./apps/
+COPY packages/ ./packages/
+
+# Install dependencies
+RUN npm install
+
+# Build the demo app
+RUN npm run build --workspace=apps/demo
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start", "--workspace=apps/demo"]

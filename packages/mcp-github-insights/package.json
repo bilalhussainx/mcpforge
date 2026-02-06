@@ -1,0 +1,33 @@
+{
+  "name": "@bilalr/mcp-github-insights",
+  "version": "1.0.0",
+  "description": "MCP server for GitHub codebase intelligence — repo analysis, contribution stats, dependency health",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mcp-github-insights": "dist/index.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "test": "vitest run"
+  },
+  "keywords": ["mcp", "model-context-protocol", "github", "code-intelligence"],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "express": "^4.21.0",
+    "octokit": "^4.1.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  }
+}
