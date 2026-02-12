@@ -44,6 +44,14 @@ GitHub codebase intelligence via GitHub API.
 
 **Tools:** `analyze_repo`, `get_contribution_stats`, `compare_repos`, `check_dependency_health`
 
+<img width="1882" height="1077" alt="mcpforgePic1" src="https://github.com/user-attachments/assets/dd693c6a-9edc-4804-94e0-789ac2e792c6" />
+
+<img width="1825" height="965" alt="mcpforgepic2" src="https://github.com/user-attachments/assets/2a7e134c-dcf2-49f6-922e-495cc55ec15f" />
+
+
+<img width="1818" height="997" alt="mcpforgepic3" src="https://github.com/user-attachments/assets/30029847-5735-4e51-b9ea-e1cb1911bbfa" />
+
+
 ## Quick Start
 
 ### With Docker Compose (Recommended)
